@@ -248,7 +248,7 @@ function getArtistByIndex(array, index) {
   return `The artist at index ${array[index].id} is ${array[index].name}.`;
 }
 
-// console.log(getArtistByIndex(artists, 0));
+console.log(getArtistByIndex(artists, 0));
 
 /**
 
@@ -270,7 +270,7 @@ function get20s(arr) {
   return tempArr;
 }
 
-// console.log(get20s(artists));
+console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -286,7 +286,7 @@ function removeArtist(arr, index) {
   arr.splice(index, 1);
   console.log(arr.length);
 }
-//removeArtist(artists, 5);
+// removeArtist(artists, 5);
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -306,17 +306,17 @@ function addArtist(arr, id, name, years, genre, nationality, bio) {
   return arr[arr.length - 1];
 }
 
-// console.log(
-//   addArtist(
-//     artists,
-//     20,
-//     "Reuben Palumbo",
-//     "2000 - 2020+",
-//     "Web Design",
-//     "Italian",
-//     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic itaque nam possimus repellat. Nulla, aut tenetur! Ratione laboriosam eos labore blanditiis. Porro explicabo, nemo commodi fugit vitae laboriosam? Hic, non."
-//   )
-// );
+console.log(
+  addArtist(
+    artists,
+    20,
+    "Reuben Palumbo",
+    "2000 - 2020+",
+    "Web Design",
+    "Italian",
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic itaque nam possimus repellat. Nulla, aut tenetur! Ratione laboriosam eos labore blanditiis. Porro explicabo, nemo commodi fugit vitae laboriosam? Hic, non."
+  )
+);
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -361,9 +361,22 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */) {
-  /* Code here */
+function getHTML(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(
+      `<div id="artist">
+        <div class="image">
+            <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg"/>
+        </div>
+        <div class = "name">
+           <a href="${arr[i].wikipedia}">${arr[i].name}</a>
+        </div>
+        <div class = "bio">${arr[i].bio}</div>
+        </div>`
+    );
+  }
 }
+getHTML(artists);
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
